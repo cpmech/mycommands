@@ -1,0 +1,288 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{mycommands}[2016/03/23 Some commands - Dorival Pedroso]
+
+% labels ===========================================================================================
+
+\newcommand{\tabname} {Table}
+\newcommand{\tabnames}{Tables}
+\newcommand{\figname} {Fig.}
+\newcommand{\fignames}{Figs.}
+\newcommand{\eqname}  {Eq.}
+\newcommand{\eqnames} {Eqs.}
+
+% basic packages ===================================================================================
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{nicefrac}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{accents}
+\usepackage{cancel}
+\usepackage{fancyvrb} % verbatim
+
+% some symbols for verbatim ========================================================================
+
+\usepackage[utf8]{inputenc}
+\DeclareUnicodeCharacter{394}{$\Delta$}
+%\DeclareUnicodeCharacter{211D}{\mathbb{R}}
+
+% url ==============================================================================================
+
+\usepackage{url}
+\usepackage{hyperref}
+\hypersetup{breaklinks=true,colorlinks=true,citecolor=blue,filecolor=blue,linkcolor=blue,urlcolor=blue}
+
+% colors ===========================================================================================
+
+\definecolor{darkgray}   {rgb} {0.3  , 0.3  , 0.3 }
+\definecolor{darkgreen}  {rgb} {0.02 , 0.4  , 0.02}
+\definecolor{darkyellow} {rgb} {1    , 0.54 , 0.25}
+\definecolor{darkred}    {rgb} {0.55 , 0    , 0.14}
+
+% algorithms =======================================================================================
+
+\usepackage[ruled,vlined]{algorithm2e}
+\SetAlgoCaptionSeparator{.}
+\newcommand{\Lcom}  [1]{\textcolor{darkgray}{\tcp{#1}}}
+\newcommand{\LcomIf}[1]{\textcolor{darkgray}{\ttfamily // #1}}
+\newcommand{\Rcom}  [1]{\textcolor{darkgray}{\tcp*[r]{#1}}}
+\newcommand{\RcomIf}[1]{\textcolor{darkgray}{\tcp*[f]{#1}}}
+\newenvironment{Algo}{\begin{algorithm}}{\end{algorithm}}
+
+% keywords =========================================================================================
+
+\newcommand{\KwFalse}   {\mathrm{false}}
+\newcommand{\KwTrue}    {\mathrm{true}}
+\newcommand{\KwINF}     {\mathrm{INF}}
+\newcommand{\KwNot}     {\textup{not}~}
+\newcommand{\KwAnd}     {\textup{and}~}
+\newcommand{\KwOr}      {\textup{or}~}
+\newcommand{\KwAll}     {\textup{all}}
+\newcommand{\KwNew}     {\textup{new}}
+\newcommand{\KwOld}     {\textup{old}}
+\newcommand{\KwCur}     {\textup{cur}}
+\newcommand{\KwCte}     {\textup{cte}}
+\newcommand{\KwTrial}   {\textup{trial}}
+\newcommand{\KwContinue}{\bf continue}
+
+% basic math =======================================================================================
+
+\newcommand{\REAL}{\mathcal{R}}
+
+% source code ======================================================================================
+
+\usepackage{listings}
+
+% Go Source Code
+\newcommand{\gosrcset}{
+\lstset{
+basicstyle   = \ttfamily\small,
+tabsize      = 3,
+morecomment  = [l]{//},%
+morecomment  = [s]{/*}{*/},
+commentstyle = \it\color{darkgray},
+classoffset=0,morekeywords={chan,int,float64},keywordstyle=\color{darkgreen},%
+classoffset=1,morekeywords={for,if,return,go},keywordstyle=\bf\color{darkred},%
+classoffset=2,morekeywords={make,func},keywordstyle=\bf\color{blue},%
+}}
+
+% auxiliary macros =================================================================================
+
+\newcommand{\goga}       {{\sffamily goga}}
+\newcommand{\pluseq}     {\mathrel{+}=}
+\newcommand{\minuseq}    {\mathrel{-}=}
+\newcommand{\tquad}  [1] {\quad\text{#1}\quad}
+\newcommand{\tqquad} [1] {\qquad\text{#1}\qquad}
+\newcommand{\ra}         {\rightarrow}
+\newcommand{\RA}         {\Rightarrow}
+\newcommand{\la}         {\leftarrow}
+\newcommand{\ACR}        {\notag\\}
+\newcommand{\UB}     [2] {\underbrace{#1}_{#2}}
+\newcommand{\UBr}    [2] {\underbrace{#1}_{\mathrlap{\hookrightarrow\,{#2}}}}
+\newcommand{\UBt}    [2] {\underbrace{#1}_{\mathrlap{\hookrightarrow\,{\text{#2}}}}}
+\newcommand{\UBtl}   [2] {\underbrace{#1}_{\mathllap{{\text{#2}}\,\hookleftarrow}}}
+\newcommand{\Szm}        {\hphantom{-}}                            % size of minus sign
+\newcommand{\Szn}        {\hphantom{4}}                            % size of a number
+
+% tensors ==========================================================================================
+
+\newcommand{\TENSY}{{\mbox{\small\bfseries .}}}
+\newcommand{\TENSYMFI}{\TENSY}
+\newcommand{\TENSYMSE}{\TENSY\TENSY}
+\newcommand{\TENSYMTH}{\TENSY\TENSY\TENSY}
+\newcommand{\TENSYMFO}{\TENSY\TENSY\TENSY\TENSY}
+\DeclareRobustCommand{\tFi} [1] {\underaccent{\TENSYMFI}{\boldsymbol{#1}}} % first order tensor
+\DeclareRobustCommand{\tSe} [1] {\underaccent{\TENSYMSE}{\boldsymbol{#1}}} % second order tensor
+\DeclareRobustCommand{\tTh} [1] {\underaccent{\TENSYMTH}{\boldsymbol{#1}}} % third order tensor
+\DeclareRobustCommand{\tFo} [1] {\underaccent{\TENSYMFO}{\boldsymbol{#1}}} % fourth order tensor
+
+% tensors: operators ===============================================================================
+
+\makeatletter
+\newcommand*\bigcdot{\mathpalette\bigcdot@{.45}}
+\newcommand*\bigcdot@[2]{\mathbin{\vcenter{\hbox{\scalebox{#2}{$\m@th#1\bullet$}}}}}
+\makeatother
+
+\DeclareMathSymbol{\dco}{\mathbin}{operators}{"3A} % double contraction
+
+\newcommand{\sco}       {\bigcdot}            % single contraction
+\newcommand{\dy}        {\otimes}             % conventional dyadic
+\newcommand{\dyL}       {\overline{\otimes}}  % leaf dyadic => ik jl
+\newcommand{\dyP}       {\underline{\otimes}} % palm dyadic => il jk
+\newcommand{\leafX} [2] {{#1}_{ik}\,{#2}_{jl}}
+\newcommand{\palmX} [2] {{#1}_{il}\,{#2}_{jk}}
+
+% operators ========================================================================================
+
+\DeclareMathOperator*{\minimise}{minimise}
+\DeclareMathOperator {\subjecto}{subject~to}
+\DeclareMathOperator {\atan}    {atan}
+\DeclareMathOperator {\Rms}     {rms}
+\DeclareMathOperator {\diV}     {div}
+\DeclareMathOperator {\diVV}    {\underaccent{\TENSY}{{\boldsymbol{\mathrm{div}}}}}
+\DeclareMathOperator {\Grad}    {\underaccent{\TENSY}{{\boldsymbol{\nabla}}}}
+\DeclareMathOperator {\Gradd}   {\underaccent{\TENSY\TENSY}{{\boldsymbol{\nabla}}}}
+\DeclareMathOperator {\Graddd}  {\underaccent{\TENSY\TENSY\TENSY}{{\boldsymbol{\nabla}}}}
+\DeclareMathOperator {\tr}      {tr}
+\DeclareMathOperator {\deV}     {\tSe{dev}}
+
+% functions ========================================================================================
+
+\newcommand{\Exp}   [1] {\mathrm{e}^{#1}}     % exponential
+\newcommand{\norm}  [1] {\lVert#1\rVert}      % Euclidean norm (or using \|#1\|_2)
+\newcommand{\abs}   [1] {|#1|}
+\newcommand{\ramp}  [1] {\langle#1\rangle}
+\newcommand{\sramp} [1] {\langle\langle#1\rangle\rangle}
+\newcommand{\heav}  [1] {\langle#1\rangle'}
+\newcommand{\step}  [1] {\mathcal{S}(#1)}
+\newcommand{\dd}    [1] {\accentset{\mbox{\small\bfseries .}}{#1}} % dot operator (time derivative)
+\newcommand{\ddd}   [1] {\accentset{\mbox{\small\bfseries ..}}{#1}} % dot operator (2nd time derivative)
+
+% differentiation ==================================================================================
+
+\newcommand{\At}     [2] {\left.{#1}\right\rvert_{#2}}
+\newcommand{\diFpar} [2] {\frac{\mathrm{d}}{\mathrm{d} #1}#2}
+\newcommand{\diF}    [2] {\frac{\mathrm{d}#1}{\mathrm{d}#2}}
+\newcommand{\diFF}   [2] {\frac{\mathrm{d}^2 #1}{\mathrm{d} #2^2}}
+\newcommand{\pdiF}   [2] {\frac{\partial #1}{\partial #2}}
+\newcommand{\pdiFF}  [2] {\frac{\partial^2 #1}{\partial #2^2}}
+\newcommand{\pdiFFx} [3] {\frac{\partial^2 #1}{\partial #2 \partial #3}}
+\newcommand{\grad}   [1] {\pdiF{#1}{\vx}}
+\newcommand{\tpdiF}  [1] {\frac{\partial #1}{\partial t}} % Differentiate w.r.t time
+\newcommand{\tdiF}   [1] {\frac{\mathrm{d} #1}{\mathrm{d}t}} % Differentiate w.r.t time
+\newcommand{\tdiFF}  [1] {\frac{\mathrm{d}^2 #1}{\mathrm{d}t^2}} % Differentiate w.r.t time
+\newcommand{\MdiF}       {\frac{\mathrm{D}}{\mathrm{D}t}}
+\newcommand{\mdiF}   [1] {\frac{\mathrm{D} #1}{\mathrm{D}t}}
+\newcommand{\mdiFF}  [2] {\frac{\mathrm{D}^{#1}#2}{\mathrm{D}t}}
+
+% integration ======================================================================================
+
+\newcommand{\dVol}       {\mathrm{d\Omega}}
+\newcommand{\dAre}       {\mathrm{d\Gamma}}
+\newcommand{\intA}   [1] {\int_\mathrm{\Gamma}        #1\;\dAre}
+\newcommand{\intAx}  [2] {\int_\mathrm{\Gamma^{#1}}   #2\;\dAre}
+\newcommand{\intV}   [1] {\int_\mathrm{\Omega}        #1\;\dVol}
+\newcommand{\intAe}  [1] {\int_\mathrm{\Gamma_e}      #1\;\dAre}
+\newcommand{\intAex} [2] {\int_\mathrm{\Gamma_e^{#1}} #2\;\dAre}
+\newcommand{\intVe}  [1] {\int_\mathrm{\Omega_e}      #1\;\dVol}
+\newcommand{\intVt}  [1] {\int_\mathrm{\Omega(t)}     #1\,\mathrm{d}\Omega}
+\newcommand{\intVz}  [1] {\int_\mathrm{\Omega_0}      #1\,\mathrm{d}{\Omega}}
+\newcommand{\integ}  [4] {\int_{#1}^{#2}              #3\,\mathrm{d}#4}
+
+% tensors: vectors =================================================================================
+
+\newcommand{\va}   {\tFi{a}}
+\newcommand{\vat}  {\tFi{\dd{a}}}
+\newcommand{\vb}   {\tFi{b}}
+\newcommand{\vbt}  {\tFi{\dd{b}}}
+\newcommand{\vc}   {\tFi{c}}
+\newcommand{\vct}  {\tFi{\dd{c}}}
+\newcommand{\ve}   {\tFi{e}}
+\newcommand{\vet}  {\tFi{\dd{e}}}
+\newcommand{\vf}   {\tFi{f}}
+\newcommand{\vfb}  {\tFi{\bar{f}}}
+\newcommand{\vft}  {\tFi{\dd{f}}}
+\newcommand{\vg}   {\tFi{g}}
+\newcommand{\vgt}  {\tFi{\dd{g}}}
+\newcommand{\vh}   {\tFi{h}}
+\newcommand{\vht}  {\tFi{\dd{h}}}
+\newcommand{\vn}   {\tFi{n}}
+\newcommand{\vnu}  {\tFi{\hat{n}}}
+\newcommand{\vu}   {\tFi{u}}
+\newcommand{\vub}  {\tFi{\bar{u}}}
+\newcommand{\vut}  {\tFi{\dd{u}}}
+\newcommand{\vv}   {\tFi{v}}
+\newcommand{\vvt}  {\tFi{\dd{v}}}
+\newcommand{\vw}   {\tFi{w}}
+\newcommand{\vwt}  {\tFi{\dd{w}}}
+\newcommand{\vq}   {\tFi{q}}
+\newcommand{\vqt}  {\tFi{\dd{q}}}
+\newcommand{\vr}   {\tFi{r}}
+\newcommand{\vrb}  {\tFi{\bar{r}}}
+\newcommand{\vt}   {\tFi{t}}
+\newcommand{\vtb}  {\tFi{\bar{t}}}
+\newcommand{\vx}   {\tFi{x}}
+\newcommand{\vxt}  {\tFi{\dd{x}}}
+\newcommand{\vxtt} {\tFi{\ddd{x}}}
+\newcommand{\vX}   {\tFi{X}}
+\newcommand{\vy}   {\tFi{y}}
+\newcommand{\vchi} {\tFi{\chi}}
+\newcommand{\veta} {\tFi{\eta}}
+\newcommand{\vksi} {\tFi{\xi}}
+\newcommand{\vnab} {\tFi{\nabla}}
+\newcommand{\vQ}   {\tFi{Q}}
+
+% tensors: 2nd order tensors =======================================================================
+
+\newcommand{\ta}   {\tSe{a}}
+\newcommand{\tb}   {\tSe{b}}
+\newcommand{\td}   {\tSe{d}}
+\newcommand{\tk}   {\tSe{k}}
+\newcommand{\tI}   {\tSe{I}}
+\newcommand{\tF}   {\tSe{F}}
+\newcommand{\tFt}  {\tSe{\dd{F}}}
+\newcommand{\tl}   {\tSe{\ell}}
+\newcommand{\tsig} {\tSe{\sigma}}
+
+% tensors: 3rd order tensors =======================================================================
+
+\newcommand{\ttksi} {\tTh{\xi}}
+
+% finite differences method ========================================================================
+
+\newcommand{\us} {u^{\star}}
+
+% finite element method ============================================================================
+
+\newcommand{\NELE}    {{N_\mathrm{ele}}}
+\newcommand{\NNOD}    {{N_\mathrm{nod}}}
+\newcommand{\NDOF}    {{N_\mathrm{dof}}}
+\newcommand{\Sm}      {S^m}
+\newcommand{\Smb}     {\bar{S}^m}
+\newcommand{\Sn}      {S^n}
+\newcommand{\Snb}     {\bar{S}^n}
+\newcommand{\vGm}     {\tFi{G}^m}
+\newcommand{\vGn}     {\tFi{G}^n}
+\newcommand{\resm}    {r^m}
+\newcommand{\fmTrs}   {f^m_\mathrm{trs}}
+\newcommand{\fmExt}   {f^m_\mathrm{ext}}
+\newcommand{\fmInt}   {f^m_\mathrm{int}}
+\newcommand{\fm}      {f^m}
+\newcommand{\Assemb}  {\text{\Large{A}}_{e=1}^{\NELE}}
+\newcommand{\equivEBC}{\overset{\text{\tiny EBC}}{\equiv}}
+
+% FEM: matrix notation =============================================================================
+
+\newcommand{\vC} [1] {\boldsymbol{#1}}
+\newcommand{\mT} [1] {\boldsymbol{#1}}
+
+\newcommand{\vecR}   {\vC{R}}
+\newcommand{\vecu}   {\vC{u}}
+\newcommand{\vecut}  {\vC{\dd{u}}}
+\newcommand{\vecus}  {\vC{u^\star}}
+\newcommand{\vecfExt}{\vC{f}_\mathrm{ext}}
+\newcommand{\vecfInt}{\vC{f}_\mathrm{int}}
+\newcommand{\matK}   {\mT{K}}
+\newcommand{\matM}   {\mT{M}}
