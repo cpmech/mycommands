@@ -1,14 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{mycommands}[2016/06/06 My LaTeX commands -- Dorival M. Pedroso]
-
-% labels ===========================================================================================
-
-\newcommand{\tabname} {Table}
-\newcommand{\tabnames}{Tables}
-\newcommand{\figname} {Fig.}
-\newcommand{\fignames}{Figs.}
-\newcommand{\eqname}  {Eq.}
-\newcommand{\eqnames} {Eqs.}
+\ProvidesPackage{mycommands}[2016/03/23 Some commands - Dorival Pedroso]
 
 % basic packages ===================================================================================
 
@@ -84,7 +75,6 @@ classoffset=2,morekeywords={make,func},keywordstyle=\bf\color{blue},%
 
 % auxiliary macros =================================================================================
 
-\newcommand{\goga}       {{\sffamily goga}}
 \newcommand{\pluseq}     {\mathrel{+}=}
 \newcommand{\minuseq}    {\mathrel{-}=}
 \newcommand{\tquad}  [1] {\quad\text{#1}\quad}
@@ -93,6 +83,7 @@ classoffset=2,morekeywords={make,func},keywordstyle=\bf\color{blue},%
 \newcommand{\RA}         {\Rightarrow}
 \newcommand{\la}         {\leftarrow}
 \newcommand{\ACR}        {\notag\\}
+\newcommand{\BRK}        {\ACR&& {}}
 \newcommand{\UB}     [2] {\underbrace{#1}_{#2}}
 \newcommand{\UBr}    [2] {\underbrace{#1}_{\mathrlap{\hookrightarrow\,{#2}}}}
 \newcommand{\UBt}    [2] {\underbrace{#1}_{\mathrlap{\hookrightarrow\,{\text{#2}}}}}
@@ -133,6 +124,9 @@ classoffset=2,morekeywords={make,func},keywordstyle=\bf\color{blue},%
 \DeclareMathOperator*{\minimise}{minimise}
 \DeclareMathOperator {\subjecto}{subject~to}
 \DeclareMathOperator {\atan}    {atan}
+\DeclareMathOperator {\sinX}    {sinX}
+\DeclareMathOperator {\cosX}    {cosX}
+\DeclareMathOperator {\sign}    {sign}
 \DeclareMathOperator {\Rms}     {rms}
 \DeclareMathOperator {\diV}     {div}
 \DeclareMathOperator {\diVV}    {\underaccent{\TENSY}{{\boldsymbol{\mathrm{div}}}}}
@@ -280,3 +274,30 @@ classoffset=2,morekeywords={make,func},keywordstyle=\bf\color{blue},%
 \newcommand{\vecfInt}{\vC{f}_\mathrm{int}}
 \newcommand{\matK}   {\mT{K}}
 \newcommand{\matM}   {\mT{M}}
+
+% goga: evolutionary algorithm =====================================================================
+
+\newcommand{\goga}                   {{\sffamily Goga}}
+\newcommand{\EpsH}                   {\epsilon_H}
+\newcommand{\FnParetoComparison}     {{\ttfamily ParetoComparison}}
+\newcommand{\FnCompareSolutions}     {{\ttfamily CompareSolutions}}
+\newcommand{\FnMetrics}              {{\ttfamily Metrics}}
+\newcommand{\FnParetoFronts}         {{\ttfamily ParetoFronts}}
+\newcommand{\FnSorted}               {{\ttfamily Sorted}}
+\newcommand{\FnCrowdingDistances}    {{\ttfamily CrowdingDistances}}
+\newcommand{\FnEvolveOneGroup}       {{\ttfamily EvolveOneGroup}}
+\newcommand{\FnExchangeViaTournament}{{\ttfamily ExchangeViaTournament}}
+\newcommand{\FnExchangeOneRandomly}  {{\ttfamily FnExchangeOneRandomly}}
+\newcommand{\FnSolve}                {{\ttfamily Solve}}
+\newcommand{\FnDiffEvol}             {{\ttfamily DiffEvol}}
+\newcommand{\FnCrossover}            {{\ttfamily Crossover}}
+\newcommand{\FnMutation}             {{\ttfamily Mutation}}
+\newcommand{\FnTournament}           {{\ttfamily Tournament}}
+\newcommand{\FnFight}                {{\ttfamily Fight}}
+\newcommand{\FnFlipCoin}             {{\ttfamily FlipCoin}}
+\newcommand{\FnRealRand}             {{\ttfamily RealRand}}
+\newcommand{\FnIntRand}              {{\ttfamily IntRand}}
+\newcommand{\FnEnforceRange}         {{\ttfamily EnforceRange}}
+\newcommand{\FnRealPart}             {{\ttfamily RealPart}}
+\newcommand{\FnIntPart}              {{\ttfamily IntPart}}
+\newcommand{\FnRunFEA}               {{\ttfamily RunFEA}}
