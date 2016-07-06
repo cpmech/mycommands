@@ -90,6 +90,8 @@ classoffset=2,morekeywords={make,func},keywordstyle=\bf\color{blue},%
 \newcommand{\UBtl}   [2] {\underbrace{#1}_{\mathllap{{\text{#2}}\,\hookleftarrow}}}
 \newcommand{\Szm}        {\hphantom{-}}                            % size of minus sign
 \newcommand{\Szn}        {\hphantom{4}}                            % size of a number
+\newcommand{\RInew}  [1] {{#1}^{n+1}}
+\newcommand{\RIold}  [1] {{#1}^{n}}
 
 % tensors ==========================================================================================
 
@@ -233,10 +235,17 @@ classoffset=2,morekeywords={make,func},keywordstyle=\bf\color{blue},%
 \newcommand{\tFt}  {\tSe{\dd{F}}}
 \newcommand{\tl}   {\tSe{\ell}}
 \newcommand{\tsig} {\tSe{\sigma}}
+\newcommand{\teps} {\tSe{\varepsilon}}
 
 % tensors: 3rd order tensors =======================================================================
 
 \newcommand{\ttksi} {\tTh{\xi}}
+
+% tensors: 4th order tensors =======================================================================
+
+\newcommand{\TD}  {\tFo{D}}
+\newcommand{\TCe} {\tFo{C}^e}
+\newcommand{\TDe} {\tFo{D}^e}
 
 % finite differences method ========================================================================
 
@@ -252,7 +261,9 @@ classoffset=2,morekeywords={make,func},keywordstyle=\bf\color{blue},%
 \newcommand{\Sn}      {S^n}
 \newcommand{\Snb}     {\bar{S}^n}
 \newcommand{\vGm}     {\tFi{G}^m}
+\newcommand{\vGmb}    {\tFi{\bar{G}}^m}
 \newcommand{\vGn}     {\tFi{G}^n}
+\newcommand{\vGnb}    {\tFi{\bar{G}}^n}
 \newcommand{\resm}    {r^m}
 \newcommand{\fmTrs}   {f^m_\mathrm{trs}}
 \newcommand{\fmExt}   {f^m_\mathrm{ext}}

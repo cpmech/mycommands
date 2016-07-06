@@ -1,0 +1,41 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{mylrm}[2016/07/03 Liquid retention model - Dorival Pedroso]
+
+\newcommand {\lamD}        {\lambda_d}
+\newcommand {\lamDb}       {\bar{\lambda}_d}
+\newcommand {\lamW}        {\lambda_w}
+\newcommand {\lamWb}       {\bar{\lambda}_w}
+\newcommand {\betD}        {\beta_d}
+\newcommand {\betW}        {\beta_w}
+\newcommand {\betI}        {\beta_1}
+\newcommand {\betII}       {\beta_2}
+\newcommand {\betIIb}      {\bar{\beta}_2}
+\newcommand {\lamB}        {\bar{\lambda}}
+\newcommand {\lamBr}       {\bar{\lambda}_{\rhd}}
+\newcommand {\lamBl}       {\bar{\lambda}_{\lhd}}
+\newcommand {\Drhd}        {D_{\rhd}}
+\newcommand {\Dlhd}        {D_{\lhd}}
+\newcommand {\cId}         {c_1^d}
+\newcommand {\cIId}        {c_2^d}
+\newcommand {\cIIId}       {c_3^d}
+\newcommand {\cIw}         {c_1^w}
+\newcommand {\cIIw}        {c_2^w}
+\newcommand {\cIIIw}       {c_3^w}
+\newcommand {\DydDx}       {\pdiF  {y_d}    {x}}
+\newcommand {\DywDx}       {\pdiF  {y_w}    {x}}
+\newcommand {\DlbDx}       {\pdiF  {\lamB}  {x}}
+\newcommand {\DbIIbDy}     {\pdiF  {\betIIb}{y}}
+\newcommand {\DlbDy}       {\pdiF  {\lamB}  {y}}
+\newcommand {\DIIydDxII}   {\pdiFF {y_d}    {x}}
+\newcommand {\DIIywDxII}   {\pdiFF {y_w}    {x}}
+\newcommand {\DIIlbDxII}   {\pdiFF {\lamB}  {x}}
+\newcommand {\DIIlbDyDx}   {\pdiFFx{\lamB}  {x}{y}}
+\newcommand {\DldbDy}      {\pdiF  {\lamDb} {y}}
+\newcommand {\DlwbDy}      {\pdiF  {\lamWb} {y}}
+\newcommand {\DbIIbDyII}   {\pdiFF {\betIIb}{y}}
+\newcommand {\DIIlbDyII}   {\pdiFF {\lamB}  {y}}
+\newcommand {\DCcDpc}      {\pdiF{\Cc}{\pC}}
+\newcommand {\DCcDsl}      {\pdiF{\Cc}{\satL}}
+\newcommand {\DIICcDpcII}  {\pdiFF{\Cc}{\pC}}
+\newcommand {\DIICcDslDpc} {\pdiFFx{\Cc}{\pC}{\satL}}
+\newcommand {\DIICcDslII}  {\pdiFF{\Cc}{\satL}}

@@ -1,0 +1,84 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{myconsist}[2016/07/04 Consistent Tangent - Dorival Pedroso]
+
+% consistent tangent operators : general ===========================================
+
+\newcommand {\JJ}      {\mathbb{J}}
+\newcommand {\LL}      {\mathbb{L}}
+\newcommand {\qold}    {\RIold{q}}
+\newcommand {\xold}    {\RIold{x}}
+\newcommand {\yold}    {\RIold{y}}
+\newcommand {\qnew}    {\RInew{q}}
+\newcommand {\xnew}    {\RInew{x}}
+\newcommand {\ynew}    {\RInew{y}}
+\newcommand {\rnew}    {\RInew{r}}
+\newcommand {\fnew}    {\RInew{f}}
+\newcommand {\Lnew}    {\RInew{L}}
+\newcommand {\Jnew}    {\RInew{J}}
+\newcommand {\Delx}    {\Delta x}
+\newcommand {\JJnew}   {\RInew{\mathbb{J}}}
+\newcommand {\LLnew}   {\RInew{\mathbb{L}}}
+\newcommand {\lamnew}  {\RInew{\lambda}}
+\newcommand {\tuNew}   {\RInew{\tu}}
+\newcommand {\Unew}    {\RInew{U}}
+\newcommand {\Rnew}    {\RInew{R}}
+\newcommand {\DelR}    {\Delta R}
+\newcommand {\Rold}    {\RIold{R}}
+\newcommand {\dydxnew} {\diF{\ynew}{\xnew}}
+\newcommand {\dfdxnew} {\diF{\fnew}{\xnew}}
+
+% plasticity =======================================================================
+
+\newcommand{\Dl}           {\Delta \ell}
+\newcommand{\Df}           {\Delta f}
+\newcommand{\Dt}           {\Delta t}
+\newcommand{\tepsNew}      {\RInew{\teps}}
+\newcommand{\tsigNew}      {\RInew{\tsig}}
+\newcommand{\tsigOld}      {\RIold{\tsig}}
+\newcommand{\tepsPnew}     {\RInew{\tepsP}}
+\newcommand{\tepsPold}     {\RIold{\tepsP}}
+\newcommand{\tepsSnew}     {\RInew{\tepsS}}
+\newcommand{\tepsSold}     {\RIold{\tepsS}}
+\newcommand{\tepsSPnew}    {\RInew{\tepsSP}}
+\newcommand{\tepsSPold}    {\RIold{\tepsSP}}
+\newcommand{\tsigTr}       {\tSe{\sigma}^{tr}}
+\newcommand{\DtsigTr}      {\Delta\tSe{\sigma}^{tr}}
+\newcommand{\tsigEnew}     {\RInew{\tsigE}}
+\newcommand{\tsigEold}     {\RIold{\tsigE}}
+\newcommand{\tdevsuTr}     {\tdevsu^{tr}}
+\newcommand{\tdevsTr}      {\tdevs^{tr}}
+\newcommand{\tdevsOld}     {\RIold{\tdevs}}
+\newcommand{\tdevsNew}     {\RInew{\tdevs}}
+\newcommand{\tdeveOld}     {\RIold{\tdeve}}
+\newcommand{\tdeveNew}     {\RInew{\tdeve}}
+\newcommand{\tDeps}        {\Delta\teps}
+\newcommand{\tDepsE}       {\Delta\tepsE}
+\newcommand{\tDepsP}       {\Delta\tepsP}
+\newcommand{\vuSnew}       {\RInew{\vuS}}
+\newcommand{\vuNew}        {\RInew{\vu}}
+\newcommand{\epsPbNew}     {\RInew{\epsPb}}
+\newcommand{\epsPbOld}     {\RIold{\epsPb}}
+\newcommand{\pEnew}        {\RInew{p_e}}
+\newcommand{\qEnew}        {\RInew{q_e}}
+\newcommand{\tepsp}        {\tSe{\varepsilon}_p}
+\newcommand{\Dteps}        {\Delta\teps}
+\newcommand{\Dtepsp}       {\Delta\tepsp}
+\newcommand{\tNbNew}       {\RInew{\tNb}}
+\newcommand{\tNnew}        {\RInew{\tN}}
+\newcommand{\fNew}         {\RInew{f}}
+\newcommand{\trsig}        {\tSe{r}_\sigma}
+\newcommand{\srsig}        {r_\sigma}
+\newcommand{\srR}          {r_R}
+\newcommand{\sralp}    [1] {r_{\alpha{#1}}}
+\newcommand{\srbet}    [1] {r_{\beta{#1}}}
+\newcommand{\srgam}        {r_\gamma}
+
+% liquid-retention-model ==========================================================
+
+\newcommand{\pCold}   {\RIold{\pC}}
+\newcommand{\pLnew}   {\RInew{\pL}}
+\newcommand{\pGnew}   {\RInew{\pG}}
+\newcommand{\pCnew}   {\RInew{\pC}}
+\newcommand{\CcBnew}  {\RInew{\CcB}}
+\newcommand{\DelpC}   {\Delta\pC}
+\newcommand{\satLnew} {\RInew{\satL}}
