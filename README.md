@@ -6,7 +6,6 @@ These commands help with typing works in Tensor Calculus, Continuum Mechanics, a
 
 Add mycommands and so on to the TEXINPUTS environment variable (this should go into `~/.bash_aliases`):
 ```
-export TEXINPUTS=:$HOME/pkg/mycommands:
 export TEXINPUTS=$TEXINPUTS:$HOME/replace-this/mycommands
 ```
 MAKE SURE TO REPLACE *replace-this* with the directory where you downloaded *mycommands*
