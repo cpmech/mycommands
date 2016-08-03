@@ -17,3 +17,7 @@ MAKE SURE TO REPLACE *replace-this* with the directory where you downloaded *myc
 Directory _inkscape-plugin_ contains a slightly modified version of this great plugin (https://pav.iki.fi/software/textext/)
 
 These files should go into `~/.config/inkscape/extensions`
+
+## Database of references
+
+JabRef is a good tool to handle references: https://www.jabref.org/
