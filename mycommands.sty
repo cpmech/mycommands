@@ -27,6 +27,25 @@
 \definecolor{darkyellow} {rgb} {1    , 0.54 , 0.25}
 \definecolor{darkred}    {rgb} {0.55 , 0    , 0.14}
 
+% figures ==========================================================================================
+
+% set spaces for figures
+\newcommand{\setspacesfigures}{
+    \renewcommand{\topfraction}{0.9}	% max fraction of floats at top
+    \renewcommand{\bottomfraction}{0.9}	% max fraction of floats at bottom
+    %   Parameters for TEXT pages (not float pages):
+    \setcounter{topnumber}{2}
+    \setcounter{bottomnumber}{2}
+    \setcounter{totalnumber}{4}     % 2 may work better
+    \setcounter{dbltopnumber}{2}    % for 2-column pages
+    \renewcommand{\dbltopfraction}{0.95}	% fit big float above 2-col. text
+    \renewcommand{\textfraction}{0.01}	% allow minimal text w. figs
+    %   Parameters for FLOAT pages (not text pages):
+    \renewcommand{\floatpagefraction}{0.7}	% require fuller float pages
+    % N.B.: floatpagefraction MUST be less than topfraction !!
+    \renewcommand{\dblfloatpagefraction}{0.7}	% require fuller float pages
+}
+
 % algorithms =======================================================================================
 
 \usepackage[ruled,vlined]{algorithm2e}
