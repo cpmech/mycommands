@@ -1,6 +1,15 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{mycommands}[2016/03/23 Some commands - Dorival Pedroso]
 
+% labels ===========================================================================================
+
+\newcommand{\tabname} {Table}
+\newcommand{\tabnames}{Tables}
+\newcommand{\figname} {Fig.}
+\newcommand{\fignames}{Figs.}
+\newcommand{\eqname}  {Eq.}
+\newcommand{\eqnames} {Eqs.}
+
 % basic packages ===================================================================================
 
 \usepackage{amsmath}
@@ -14,6 +23,12 @@
 \usepackage{cancel}
 \usepackage{fancyvrb} % verbatim
 \usepackage{import}
+
+% some symbols for verbatim ========================================================================
+
+%\usepackage[utf8]{inputenc}
+%\DeclareUnicodeCharacter{394}{$\Delta$}
+%\DeclareUnicodeCharacter{211D}{\mathbb{R}}
 
 % url ==============================================================================================
 
