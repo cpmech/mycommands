@@ -120,6 +120,7 @@ classoffset=2,morekeywords={make,func},keywordstyle=\bf\color{blue},%
 \newcommand{\la}         {\leftarrow}
 \newcommand{\ACR}        {\notag\\}
 \newcommand{\MCR}        {\\[3pt]}
+\newcommand{\MCRx}       {\\[6pt]}
 \newcommand{\BRK}        {\ACR&& {}}
 \newcommand{\UB}     [2] {\underbrace{#1}_{#2}}
 \newcommand{\UBr}    [2] {\underbrace{#1}_{\mathrlap{\hookrightarrow\,{#2}}}}
@@ -129,6 +130,13 @@ classoffset=2,morekeywords={make,func},keywordstyle=\bf\color{blue},%
 \newcommand{\Szn}        {\hphantom{4}}                            % size of a number
 \newcommand{\RInew}  [1] {{#1}^{n+1}}
 \newcommand{\RIold}  [1] {{#1}^{n}}
+
+% integer division and modulo operators ============================================================
+
+\DeclareMathOperator{\idiv}{\backslash} % integer division
+\DeclareMathOperator{\imod}{\%}         % modulo operator
+\DeclareRobustCommand{\IDIV} [1] {\accentset{\thicksim}{#1}} % integer division function
+\DeclareRobustCommand{\IMOD} [1] {\underaccent{\thicksim}{#1}} % modulo operator function
 
 % tensors ==========================================================================================
 
@@ -230,14 +238,18 @@ classoffset=2,morekeywords={make,func},keywordstyle=\bf\color{blue},%
 \newcommand{\vbt}  {\tFi{\dd{b}}}
 \newcommand{\vc}   {\tFi{c}}
 \newcommand{\vct}  {\tFi{\dd{c}}}
+\newcommand{\vd}   {\tFi{d}}
 \newcommand{\ve}   {\tFi{e}}
+\newcommand{\vE}   {\tFi{E}}
 \newcommand{\veb}  {\tFi{\bar{e}}}
+\newcommand{\vEb}  {\tFi{\bar{E}}}
 \newcommand{\vet}  {\tFi{\dd{e}}}
 \newcommand{\vf}   {\tFi{f}}
 \newcommand{\vfb}  {\tFi{\bar{f}}}
 \newcommand{\vft}  {\tFi{\dd{f}}}
 \newcommand{\vg}   {\tFi{g}}
 \newcommand{\vgt}  {\tFi{\dd{g}}}
+\newcommand{\vG}   {\tFi{G}}
 \newcommand{\vh}   {\tFi{h}}
 \newcommand{\vht}  {\tFi{\dd{h}}}
 \newcommand{\vn}   {\tFi{n}}
@@ -245,6 +257,7 @@ classoffset=2,morekeywords={make,func},keywordstyle=\bf\color{blue},%
 \newcommand{\vu}   {\tFi{u}}
 \newcommand{\vub}  {\tFi{\bar{u}}}
 \newcommand{\vut}  {\tFi{\dd{u}}}
+\newcommand{\vuExa}{\tFi{u}_\checkmark}
 \newcommand{\vv}   {\tFi{v}}
 \newcommand{\vvt}  {\tFi{\dd{v}}}
 \newcommand{\vw}   {\tFi{w}}
@@ -253,6 +266,7 @@ classoffset=2,morekeywords={make,func},keywordstyle=\bf\color{blue},%
 \newcommand{\vqt}  {\tFi{\dd{q}}}
 \newcommand{\vr}   {\tFi{r}}
 \newcommand{\vrb}  {\tFi{\bar{r}}}
+\newcommand{\vs}   {\tFi{s}}
 \newcommand{\vt}   {\tFi{t}}
 \newcommand{\vtb}  {\tFi{\bar{t}}}
 \newcommand{\vx}   {\tFi{x}}
@@ -270,11 +284,16 @@ classoffset=2,morekeywords={make,func},keywordstyle=\bf\color{blue},%
 
 \newcommand{\ta}   {\tSe{a}}
 \newcommand{\tb}   {\tSe{b}}
+\newcommand{\tc}   {\tSe{c}}
 \newcommand{\td}   {\tSe{d}}
+\newcommand{\te}   {\tSe{e}}
+\newcommand{\tE}   {\tSe{E}}
+\newcommand{\tEb}  {\tSe{\bar{E}}}
 \newcommand{\tk}   {\tSe{k}}
 \newcommand{\tI}   {\tSe{I}}
 \newcommand{\tF}   {\tSe{F}}
 \newcommand{\tFt}  {\tSe{\dd{F}}}
+\newcommand{\tg}   {\tSe{g}}
 \newcommand{\tl}   {\tSe{\ell}}
 \newcommand{\tsig} {\tSe{\sigma}}
 \newcommand{\teps} {\tSe{\varepsilon}}
