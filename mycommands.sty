@@ -23,6 +23,7 @@
 \usepackage{cancel}
 \usepackage{fancyvrb} % verbatim
 \usepackage{import}
+\usepackage{stmaryrd} % for \llbracket and \rrbracket. Requires:  sudo apt-get install texlive-math-extra
 
 % some symbols for verbatim ========================================================================
 
@@ -111,6 +112,8 @@ classoffset=2,morekeywords={make,func},keywordstyle=\bf\color{blue},%
 
 % auxiliary macros =================================================================================
 
+\newcommand{\RE}         {{\mathbb R}}
+\newcommand{\suchthat}   {\;|\;}
 \newcommand{\pluseq}     {\mathrel{+}=}
 \newcommand{\minuseq}    {\mathrel{-}=}
 \newcommand{\tquad}  [1] {\quad\text{#1}\quad}
@@ -130,6 +133,8 @@ classoffset=2,morekeywords={make,func},keywordstyle=\bf\color{blue},%
 \newcommand{\Szn}        {\hphantom{4}}                            % size of a number
 \newcommand{\RInew}  [1] {{#1}^{n+1}}
 \newcommand{\RIold}  [1] {{#1}^{n}}
+\newcommand{\triprod}[3] {{\llbracket #1 \;\, #2 \;\, #3 \rrbracket}}
+\newcommand{\CQD}        {\qquad\blacksquare}
 
 % integer division and modulo operators ============================================================
 
@@ -214,11 +219,13 @@ classoffset=2,morekeywords={make,func},keywordstyle=\bf\color{blue},%
 
 % integration ======================================================================================
 
+\newcommand{\dop}        {\mathrm{d}} % d-operator (upright)
 \newcommand{\dVol}       {\mathrm{d\Omega}}
 \newcommand{\dAre}       {\mathrm{d\Gamma}}
 \newcommand{\intA}   [1] {\int_\mathrm{\Gamma}        #1\;\dAre}
 \newcommand{\intAx}  [2] {\int_\mathrm{\Gamma^{#1}}   #2\;\dAre}
 \newcommand{\intV}   [1] {\int_\mathrm{\Omega}        #1\;\dVol}
+\newcommand{\intVx}  [2] {\int_\mathrm{\Omega_{#1}}   #2\;\dVol_{#1}}
 \newcommand{\intAe}  [1] {\int_\mathrm{\Gamma_e}      #1\;\dAre}
 \newcommand{\intAex} [2] {\int_\mathrm{\Gamma_e^{#1}} #2\;\dAre}
 \newcommand{\intVe}  [1] {\int_\mathrm{\Omega_e}      #1\;\dVol}
@@ -247,6 +254,7 @@ classoffset=2,morekeywords={make,func},keywordstyle=\bf\color{blue},%
 \newcommand{\vf}   {\tFi{f}}
 \newcommand{\vfb}  {\tFi{\bar{f}}}
 \newcommand{\vft}  {\tFi{\dd{f}}}
+\newcommand{\vphi} {\tFi{\phi}}
 \newcommand{\vg}   {\tFi{g}}
 \newcommand{\vgt}  {\tFi{\dd{g}}}
 \newcommand{\vG}   {\tFi{G}}
@@ -264,6 +272,7 @@ classoffset=2,morekeywords={make,func},keywordstyle=\bf\color{blue},%
 \newcommand{\vwt}  {\tFi{\dd{w}}}
 \newcommand{\vq}   {\tFi{q}}
 \newcommand{\vqt}  {\tFi{\dd{q}}}
+\newcommand{\vqb}  {\tFi{\bar{q}}}
 \newcommand{\vr}   {\tFi{r}}
 \newcommand{\vrb}  {\tFi{\bar{r}}}
 \newcommand{\vs}   {\tFi{s}}
@@ -293,6 +302,7 @@ classoffset=2,morekeywords={make,func},keywordstyle=\bf\color{blue},%
 \newcommand{\tI}   {\tSe{I}}
 \newcommand{\tF}   {\tSe{F}}
 \newcommand{\tFt}  {\tSe{\dd{F}}}
+\newcommand{\tJ}   {\tSe{J}}
 \newcommand{\tg}   {\tSe{g}}
 \newcommand{\tl}   {\tSe{\ell}}
 \newcommand{\tsig} {\tSe{\sigma}}
@@ -300,10 +310,12 @@ classoffset=2,morekeywords={make,func},keywordstyle=\bf\color{blue},%
 
 % tensors: 3rd order tensors =======================================================================
 
+\newcommand{\tta}   {\tTh{a}}
 \newcommand{\ttksi} {\tTh{\xi}}
 
 % tensors: 4th order tensors =======================================================================
 
+\newcommand{\Ta}  {\tFo{a}}
 \newcommand{\TD}  {\tFo{D}}
 \newcommand{\TCe} {\tFo{C}^e}
 \newcommand{\TDe} {\tFo{D}^e}
@@ -321,6 +333,7 @@ classoffset=2,morekeywords={make,func},keywordstyle=\bf\color{blue},%
 \newcommand{\Smb}     {\bar{S}^m}
 \newcommand{\Sn}      {S^n}
 \newcommand{\Snb}     {\bar{S}^n}
+\newcommand{\vgm}     {\tFi{g}^m}
 \newcommand{\vGm}     {\tFi{G}^m}
 \newcommand{\vGmb}    {\tFi{\bar{G}}^m}
 \newcommand{\vGn}     {\tFi{G}^n}
