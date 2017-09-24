@@ -165,12 +165,13 @@ classoffset=2,morekeywords={make,func},keywordstyle=\bf\color{blue},%
 
 \DeclareMathSymbol{\dco}{\mathbin}{operators}{"3A} % double contraction
 
-\newcommand{\sco}       {\bigcdot}            % single contraction
-\newcommand{\dy}        {\otimes}             % conventional dyadic
-\newcommand{\dyL}       {\overline{\otimes}}  % leaf dyadic => ik jl
-\newcommand{\dyP}       {\underline{\otimes}} % palm dyadic => il jk
-\newcommand{\leafX} [2] {{#1}_{ik}\,{#2}_{jl}}
-\newcommand{\palmX} [2] {{#1}_{il}\,{#2}_{jk}}
+\newcommand{\sco}       {\bigcdot}             % single contraction
+\newcommand{\dy}        {\otimes}              % conventional dyadic
+\newcommand{\dyL}       {\overline{\otimes}}   % leaf dyadic => ik jl
+\newcommand{\dyP}       {\underline{\otimes}}  % palm dyadic => il jk
+\newcommand{\leafX} [2] {{#1}_{ik}\,{#2}_{jl}} % components of leaf dyadic
+\newcommand{\palmX} [2] {{#1}_{il}\,{#2}_{jk}} % components of palm dyadic
+\newcommand{\cross}     {\times}               % cross product
 
 % operators ========================================================================================
 
@@ -257,6 +258,7 @@ classoffset=2,morekeywords={make,func},keywordstyle=\bf\color{blue},%
 \newcommand{\vft}  {\tFi{\dd{f}}}
 \newcommand{\vphi} {\tFi{\phi}}
 \newcommand{\vg}   {\tFi{g}}
+\newcommand{\vdg}  {\mathrm{d}\tFi{g}}
 \newcommand{\vgt}  {\tFi{\dd{g}}}
 \newcommand{\vG}   {\tFi{G}}
 \newcommand{\vh}   {\tFi{h}}
@@ -267,6 +269,7 @@ classoffset=2,morekeywords={make,func},keywordstyle=\bf\color{blue},%
 \newcommand{\vub}  {\tFi{\bar{u}}}
 \newcommand{\vut}  {\tFi{\dd{u}}}
 \newcommand{\vuExa}{\tFi{u}_\checkmark}
+\newcommand{\vdu}  {\mathrm{d}\tFi{u}}
 \newcommand{\vv}   {\tFi{v}}
 \newcommand{\vvt}  {\tFi{\dd{v}}}
 \newcommand{\vw}   {\tFi{w}}
@@ -290,6 +293,11 @@ classoffset=2,morekeywords={make,func},keywordstyle=\bf\color{blue},%
 \newcommand{\vksi} {\tFi{\xi}}
 \newcommand{\vnab} {\tFi{\nabla}}
 \newcommand{\vQ}   {\tFi{Q}}
+\newcommand{\vS}   {\tFi{S}}
+\newcommand{\vV}   {\tFi{V}}
+\newcommand{\vdS}  {\mathrm{d}\tFi{S}}
+\newcommand{\vdV}  {\mathrm{d}\tFi{V}}
+\newcommand{\vGamma}{\tFi{\Gamma}}
 
 % tensors: 2nd order tensors =======================================================================
 
