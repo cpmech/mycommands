@@ -24,6 +24,8 @@
 \usepackage{fancyvrb} % verbatim
 \usepackage{import}
 \usepackage{stmaryrd} % for \llbracket and \rrbracket. Requires:  sudo apt-get install texlive-math-extra
+\usepackage{empheq} % for boxed equations
+\usepackage[most]{tcolorbox} % for colorfou boxed equations
 
 % some symbols for verbatim ========================================================================
 
@@ -72,6 +74,10 @@
 \newcommand{\Rcom}  [1]{\textcolor{darkgray}{\tcp*[r]{#1}}}
 \newcommand{\RcomIf}[1]{\textcolor{darkgray}{\tcp*[f]{#1}}}
 \newenvironment{Algo}{\begin{algorithm}}{\end{algorithm}}
+
+% highlight equations =============================================================================
+
+\newenvironment{Eqbox}{\empheq[box=\tcboxmath]{equation*}}{\endempheq}
 
 % keywords =========================================================================================
 
@@ -189,6 +195,7 @@ classoffset=2,morekeywords={make,func},keywordstyle=\bf\color{blue},%
 \DeclareMathOperator {\Graddd}  {\underaccent{\TENSY\TENSY\TENSY}{{\boldsymbol{\nabla}}}}
 \DeclareMathOperator {\tr}      {tr}
 \DeclareMathOperator {\deV}     {\tSe{dev}}
+\DeclareMathOperator {\fsum}    {sum}
 
 % functions ========================================================================================
 
