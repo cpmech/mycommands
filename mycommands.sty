@@ -47,6 +47,8 @@
 \definecolor{darkyellow} {rgb} {1    , 0.54 , 0.25}
 \definecolor{darkred}    {rgb} {0.55 , 0    , 0.14}
 
+\definecolor{codebg} {HTML} {e7e7e7}
+
 % figures ==========================================================================================
 
 % set spaces for figures
@@ -414,7 +416,18 @@
 \newcommand {\singlequoted} [1] {{\ttfamily\textquotesingle#1\textquotesingle}}
 \newcommand {\doublequoted} [1] {{\ttfamily\symbol{34}#1\symbol{34}}}
 \newcommand {\triplequoted} [1] {{\ttfamily\textquotesingle\textquotesingle\textquotesingle#1\textquotesingle\textquotesingle\textquotesingle}}
+\newcommand {\outFile}      [1] {\small\VerbatimInput{#1}}
 
 % python source code ===============================================================================
 
-\lstnewenvironment{python}{\lstset{language=python}}{}
+\newcommand {\pythonInit} {\lstset{
+language=python,
+backgroundcolor=\color{codebg},
+basicstyle=\ttfamily\small,
+showstringspaces=false,
+showspaces=false,
+upquote=true,
+}}
+
+\newcommand {\pythonFile} [1] {\pythonInit\lstinputlisting{#1}}
+\lstnewenvironment{python}{\pythonInit}{}
