@@ -26,6 +26,7 @@
 \usepackage{stmaryrd} % for \llbracket and \rrbracket. Requires:  sudo apt-get install texlive-math-extra
 \usepackage{empheq} % for boxed equations
 \usepackage[most]{tcolorbox} % for colorfou boxed equations
+\usepackage{listings}
 
 % some symbols for verbatim ========================================================================
 
@@ -98,23 +99,6 @@
 % basic math =======================================================================================
 
 \newcommand{\REAL}{\mathcal{R}}
-
-% source code ======================================================================================
-
-\usepackage{listings}
-
-% Go Source Code
-\newcommand{\gosrcset}{
-\lstset{
-basicstyle   = \ttfamily\small,
-tabsize      = 3,
-morecomment  = [l]{//},%
-morecomment  = [s]{/*}{*/},
-commentstyle = \it\color{darkgray},
-classoffset=0,morekeywords={chan,int,float64},keywordstyle=\color{darkgreen},%
-classoffset=1,morekeywords={for,if,return,go},keywordstyle=\bf\color{darkred},%
-classoffset=2,morekeywords={make,func},keywordstyle=\bf\color{blue},%
-}}
 
 % auxiliary macros =================================================================================
 
@@ -422,3 +406,15 @@ classoffset=2,morekeywords={make,func},keywordstyle=\bf\color{blue},%
 \newcommand {\Umss}   {\mathrm{m/s^2}}
 \newcommand {\UMgmmm} {\mathrm{Mg/m^3}}
 \newcommand {\Unone}  {\mathrm{[-]}}
+
+% coding ===========================================================================================
+
+\newcommand {\code}         [1] {{\ttfamily #1}}
+\newcommand {\fquoted}      [1] {{\ttfamily f\textquotesingle#1\textquotesingle}}
+\newcommand {\singlequoted} [1] {{\ttfamily\textquotesingle#1\textquotesingle}}
+\newcommand {\doublequoted} [1] {{\ttfamily\symbol{34}#1\symbol{34}}}
+\newcommand {\triplequoted} [1] {{\ttfamily\textquotesingle\textquotesingle\textquotesingle#1\textquotesingle\textquotesingle\textquotesingle}}
+
+% python source code ===============================================================================
+
+\lstnewenvironment{python}{\lstset{language=python}}{}
