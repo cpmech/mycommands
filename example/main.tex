@@ -4,13 +4,8 @@
 \author{Dorival M. Pedroso}
 
 \usepackage{mycommands}
+\usepackage[a4paper,margin=2cm]{geometry}
 
-\newcommand{\tabname} {Table}
-\newcommand{\tabnames}{Tables}
-\newcommand{\figname} {Figure}
-\newcommand{\fignames}{Figures}
-\newcommand{\eqname}  {Equation}
-\newcommand{\eqnames} {Equations}
 
 \begin{document}
 
@@ -26,14 +21,11 @@ Example of citation: \cite{pedroso:15a}
 
 Example of equation:
 \begin{equation}
-\tSe{\sigma} = \tFo{D} : \tSe{\varepsilon}
+  \tSe{\sigma} = \tFo{D} : \tSe{\varepsilon}
 \end{equation}
 
-\nocite{*}
 
-
-
-\bibliographystyle{IEEEtran}
+\bibliographystyle{acm}
 \bibliography{mydatabase}
 
 \end{document}
